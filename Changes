@@ -2,6 +2,7 @@ Revision history for Acme-Affinity
 
 {{$NEXT}}
     - Removed redundant NAME POD section.
+    - Modularized the score() method.
 
 0.01 2017-11-03 01:14:23
     - Minted by Dist::Zilla.

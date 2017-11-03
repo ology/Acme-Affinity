@@ -131,6 +131,24 @@ sub score {
     my $you = $self->you;
     my $importance = $self->importance;
 
+    my $me_score  = _score( $me, $you, $importance );
+    my $you_score = _score( $you, $me, $importance );;
+
+    my $m = Math::BigRat->new($me_score);
+    my $y = Math::BigRat->new($you_score);
+
+    my $question_count = Math::BigRat->new( scalar @$me );
+
+    my $product = $m->bmul($y);
+
+    my $score = $product->broot($question_count);
+
+    return $score * 100;
+}
+
+sub _score {
+    my ( $me, $you, $importance ) = @_;
+
     my $me_score = 0;
     my $me_total = 0;
     for my $i ( 0 .. @$me - 1 ) {
@@ -141,26 +159,7 @@ sub score {
     }
     $me_score /= $me_total;
 
-    my $you_score = 0;
-    my $you_total = 0;
-    for my $i ( 0 .. @$you - 1 ) {
-        $you_total += $importance->{ $you->[$i][2] };
-        if ( $you->[$i][1] eq $me->[$i][0] ) {
-            $you_score += $importance->{ $you->[$i][2] };
-        }
-    }
-    $you_score /= $you_total;
-
-    my $score_me  = Math::BigRat->new($me_score);
-    my $score_you = Math::BigRat->new($you_score);
-
-    my $product = $score_me->bmul($score_you);
-
-    my $question_count = Math::BigRat->new( scalar @$me );
-
-    my $score = $product->broot($question_count);
-
-    return $score * 100;
+    return $me_score;
 }
 
 1;
