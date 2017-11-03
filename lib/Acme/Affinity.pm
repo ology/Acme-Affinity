@@ -2,17 +2,13 @@ package Acme::Affinity;
 
 # ABSTRACT: Compute the affinity between two people
 
-our $VERSION = '0.01';
+our $VERSION = '0.0101';
 
 use Moo;
 use strictures 2;
 use namespace::clean;
 
 use Math::BigRat;
-
-=head1 NAME
-
-Acme::Affinity - Compute the affinity between two people
 
 =head1 SYNOPSIS
 
