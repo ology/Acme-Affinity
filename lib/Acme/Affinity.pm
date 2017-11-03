@@ -161,7 +161,7 @@ sub _score {
     }
 
     $score /= $total
-        if $total > 0;
+        if $total != 0;
 
     return $score;
 }
