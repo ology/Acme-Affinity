@@ -149,20 +149,20 @@ sub score {
 sub _score {
     my ( $me, $you, $importance ) = @_;
 
-    my $me_score = 0;
-    my $me_total = 0;
+    my $score = 0;
+    my $total = 0;
 
     for my $i ( 0 .. @$me - 1 ) {
-        $me_total += $importance->{ $me->[$i][2] };
+        $total += $importance->{ $me->[$i][2] };
 
         if ( $me->[$i][1] eq $you->[$i][0] ) {
-            $me_score += $importance->{ $me->[$i][2] };
+            $score += $importance->{ $me->[$i][2] };
         }
     }
 
-    $me_score /= $me_total;
+    $score /= $total;
 
-    return $me_score;
+    return $score;
 }
 
 1;
