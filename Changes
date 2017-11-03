@@ -1,4 +1,5 @@
 Revision history for Acme-Affinity
 
-{$NEXT}
+{{$NEXT}}
     - Minted by Dist::Zilla.
+    - Ported functionality from personal devel repo.
