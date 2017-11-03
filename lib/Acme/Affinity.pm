@@ -160,7 +160,8 @@ sub _score {
         }
     }
 
-    $score /= $total;
+    $score /= $total
+        if $total > 0;
 
     return $score;
 }
