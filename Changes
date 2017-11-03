@@ -1,6 +1,9 @@
 Revision history for Acme-Affinity
 
 {{$NEXT}}
+    - Fixed tiny typo.
+
+0.0101 2017-11-03 01:37:57
     - Removed redundant NAME POD section.
     - Modularized the score() method.
 

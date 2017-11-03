@@ -2,7 +2,7 @@ package Acme::Affinity;
 
 # ABSTRACT: Compute the affinity between two people
 
-our $VERSION = '0.0101';
+our $VERSION = '0.0102';
 
 use Moo;
 use strictures 2;
@@ -13,7 +13,7 @@ use Math::BigRat;
 =head1 SYNOPSIS
 
   use Acme::Affinity;
-  my %arguments = ( questions => [], importance => [], me => [], you => [] );
+  my %arguments = ( questions => [], importance => {}, me => [], you => [] );
   my $affinity = Acme::Affinity->new(%arguments);
   my $score = $affinity->score();
 
@@ -151,12 +151,15 @@ sub _score {
 
     my $me_score = 0;
     my $me_total = 0;
+
     for my $i ( 0 .. @$me - 1 ) {
         $me_total += $importance->{ $me->[$i][2] };
+
         if ( $me->[$i][1] eq $you->[$i][0] ) {
             $me_score += $importance->{ $me->[$i][2] };
         }
     }
+
     $me_score /= $me_total;
 
     return $me_score;
