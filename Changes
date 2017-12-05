@@ -1,6 +1,9 @@
 Revision history for Acme-Affinity
 
 {{$NEXT}}
+    - 
+
+0.0102 2017-11-03 02:05:50
     - Fixed tiny typo.
     - Improve variable naming.
 
