@@ -46,7 +46,7 @@ has questions => (
 
 A hash reference with importance level keys and weight values.
 
-Example:
+Default:
 
   { 'irrelevant'         => 0,
     'a little important' => 1,
