@@ -173,6 +173,8 @@ __END__
 
 L<Moo>
 
+L<Math::BigRat>
+
 L<https://www.youtube.com/watch?v=m9PiPlRuy6E>
 
 =cut
