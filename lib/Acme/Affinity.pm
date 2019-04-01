@@ -138,7 +138,7 @@ sub score {
     my $importance = $self->importance;
 
     my $me_score  = _score( $me, $you, $importance );
-    my $you_score = _score( $you, $me, $importance );;
+    my $you_score = _score( $you, $me, $importance );
 
     my $m = Math::BigRat->new($me_score);
     my $y = Math::BigRat->new($you_score);
