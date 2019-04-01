@@ -2,7 +2,7 @@ package Acme::Affinity;
 
 # ABSTRACT: Compute the affinity between two people
 
-our $VERSION = '0.0102';
+our $VERSION = '0.0103';
 
 use Moo;
 use strictures 2;
