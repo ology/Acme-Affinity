@@ -13,8 +13,11 @@ use Math::BigRat;
 =head1 SYNOPSIS
 
   use Acme::Affinity;
+
   my %arguments = ( questions => [], importance => {}, me => [], you => [] );
+
   my $affinity = Acme::Affinity->new(%arguments);
+
   my $score = $affinity->score();
 
 =head1 DESCRIPTION
