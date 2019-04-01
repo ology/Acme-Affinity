@@ -22,8 +22,9 @@ use Math::BigRat;
 
 =head1 DESCRIPTION
 
-An C<Acme::Affinity> object computes the affinity between two people based on a common list of questions and answers
-and their weighted importance.
+An C<Acme::Affinity> object computes the relationship affinity between two
+people based on a common list of questions and answers and their weighted
+importance.
 
 =head1 ATTRIBUTES
 
@@ -76,7 +77,8 @@ has importance => (
 
 =head2 me
 
-An array reference triple of question responses, desired responses and importance levels for person A.
+An array reference triple of question responses, desired responses and
+importance levels for person A.
 
 Example:
 
@@ -95,7 +97,8 @@ has me => (
 
 =head2 you
 
-An array reference triple of question responses, desired responses and importance levels for person B.
+An array reference triple of question responses, desired responses and
+importance levels for person B.
 
 Example:
 
