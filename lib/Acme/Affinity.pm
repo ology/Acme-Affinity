@@ -133,17 +133,13 @@ Compute the affinity score for the two given people.
 sub score {
     my $self = shift;
 
-    my $me = $self->me;
-    my $you = $self->you;
-    my $importance = $self->importance;
-
-    my $me_score  = _score( $me, $you, $importance );
-    my $you_score = _score( $you, $me, $importance );
+    my $me_score  = _score( $self->me, $self->you, $self->importance );
+    my $you_score = _score( $self->you, $self->me, $self->importance );
 
     my $m = Math::BigRat->new($me_score);
     my $y = Math::BigRat->new($you_score);
 
-    my $question_count = Math::BigRat->new( scalar @$me );
+    my $question_count = Math::BigRat->new( scalar @{ $self->me } );
 
     my $product = $m->bmul($y);
 
