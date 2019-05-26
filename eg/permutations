@@ -17,27 +17,11 @@ my $importance = {
     'mandatory'          => 250,
 };
 
-my @responses1;
-for my $v ( values %{ $questions->[0] } ) {
-    my @answers = variations_with_repetition( $v, 2 );
-    for my $answer ( @answers ) {
-        for my $import ( sort { $importance->{$a} <=> $importance->{$b} } keys %$importance ) {
-            push @responses1, [ @$answer, $import ];
-        }
-    }
-}
+my @responses1 = get_responses( $questions->[0], $importance );
 #use Data::Dumper;warn(__PACKAGE__,' ',__LINE__," MARK: ",Dumper\@responses1);
 #warn(__PACKAGE__,' ',__LINE__," MARK: ",scalar(@responses1),"\n");
 
-my @responses2;
-for my $v ( values %{ $questions->[1] } ) {
-    my @answers = variations_with_repetition( $v, 2 );
-    for my $answer ( @answers ) {
-        for my $import ( sort { $importance->{$a} <=> $importance->{$b} } keys %$importance ) {
-            push @responses2, [ @$answer, $import ];
-        }
-    }
-}
+my @responses2 = get_responses( $questions->[1], $importance );
 #use Data::Dumper;warn(__PACKAGE__,' ',__LINE__," MARK: ",Dumper\@responses2);
 #warn(__PACKAGE__,' ',__LINE__," MARK: ",scalar(@responses2),"\n");
 
@@ -62,4 +46,22 @@ for my $v ( @variations ) {
         you        => $v->[1],
     );
     print $affinity->score, "\n";
+}
+
+sub get_responses {
+    my ( $question, $importance ) = @_;
+
+    my @responses;
+
+    for my $v ( values %$question ) {
+        my @answers = variations_with_repetition( $v, 2 );
+
+        for my $answer ( @answers ) {
+            for my $import ( sort { $importance->{$a} <=> $importance->{$b} } keys %$importance ) {
+                push @responses, [ @$answer, $import ];
+            }
+        }
+    }
+
+    return @responses;
 }
