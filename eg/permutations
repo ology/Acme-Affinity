@@ -18,12 +18,7 @@ my $importance = {
 };
 
 my @responses1 = get_responses( $questions->[0], $importance );
-#use Data::Dumper;warn(__PACKAGE__,' ',__LINE__," MARK: ",Dumper\@responses1);
-#warn(__PACKAGE__,' ',__LINE__," MARK: ",scalar(@responses1),"\n");
-
 my @responses2 = get_responses( $questions->[1], $importance );
-#use Data::Dumper;warn(__PACKAGE__,' ',__LINE__," MARK: ",Dumper\@responses2);
-#warn(__PACKAGE__,' ',__LINE__," MARK: ",scalar(@responses2),"\n");
 
 my @response_pairs;
 for my $r1 ( @responses1 ) {
@@ -31,12 +26,8 @@ for my $r1 ( @responses1 ) {
         push @response_pairs, [ $r1, $r2 ];
     }
 }
-#use Data::Dumper;warn(__PACKAGE__,' ',__LINE__," MARK: ",Dumper\@response_pairs);
-#warn(__PACKAGE__,' ',__LINE__," MARK: ",scalar(@response_pairs),"\n");
 
 my @variations = variations_with_repetition( \@response_pairs, 2 );
-#use Data::Dumper;warn(__PACKAGE__,' ',__LINE__," MARK: ",Dumper$variations[0]);
-#warn(__PACKAGE__,' ',__LINE__," MARK: ",scalar(@variations),"\n");
 
 for my $v ( @variations ) {
     my $affinity = Acme::Affinity->new(
