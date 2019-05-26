@@ -2,7 +2,7 @@ package Acme::Affinity;
 
 # ABSTRACT: Compute the affinity between two people
 
-our $VERSION = '0.0103';
+our $VERSION = '0.0104';
 
 use Moo;
 use strictures 2;
@@ -145,7 +145,7 @@ sub score {
 
     my $score = $product->broot($question_count);
 
-    return $score * 100;
+    return $score->numify * 100;
 }
 
 sub _score {
