@@ -18,8 +18,7 @@ my $importance = {
 };
 
 my @responses1;
-my $q = $questions->[0];
-for my $v ( values %$q ) {
+for my $v ( values %{ $questions->[0] } ) {
     my @answers = variations_with_repetition( $v, 2 );
     for my $answer ( @answers ) {
         for my $import ( sort { $importance->{$a} <=> $importance->{$b} } keys %$importance ) {
@@ -31,8 +30,7 @@ for my $v ( values %$q ) {
 #warn(__PACKAGE__,' ',__LINE__," MARK: ",scalar(@responses1),"\n");
 
 my @responses2;
-$q = $questions->[1];
-for my $v ( values %$q ) {
+for my $v ( values %{ $questions->[1] } ) {
     my @answers = variations_with_repetition( $v, 2 );
     for my $answer ( @answers ) {
         for my $import ( sort { $importance->{$a} <=> $importance->{$b} } keys %$importance ) {
