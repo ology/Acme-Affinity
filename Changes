@@ -1,6 +1,9 @@
 Revision history for Acme-Affinity
 
 {{$NEXT}}
+
+0.0104 2019-05-26 12:38:01
+    - Use object accessors, not variables of accessors.
     - Math::BigRat->numify the returned ->score.
     - Add an example program to compute all possible scores.
 
