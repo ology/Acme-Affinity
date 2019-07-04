@@ -1,7 +1,7 @@
 Revision history for Acme-Affinity
 
 {{$NEXT}}
-    - Cleaned up the eg/permutations code.
+    - Enhanced the eg/permutations code.
 
 0.0104 2019-05-26 12:38:01
     - Use object accessors, not variables of accessors.
