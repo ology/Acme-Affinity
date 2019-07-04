@@ -27,15 +27,15 @@ for my $r1 ( @responses1 ) {
     }
 }
 
-my @variations = variations_with_repetition( \@response_pairs, 2 );
+my $iter = variations_with_repetition( \@response_pairs, 2 );
 #warn(__PACKAGE__,' ',__LINE__," MARK: ",scalar(@variations),"\n");exit;
 
 my %scores;
 
 my $n = 0;
 
-for my $v ( @variations ) {
-#    $n++;
+while ( my $v = $iter->next ) {
+    $n++;
 
     my $affinity = Acme::Affinity->new(
         questions  => $questions,
@@ -44,7 +44,7 @@ for my $v ( @variations ) {
         you        => $v->[1],
     );
 
-#    print $n, '. ', $affinity->score, "\n";
+    print $n, '. ', $affinity->score, "\n";
 
     $scores{ $affinity->score }++;
 }
@@ -61,9 +61,9 @@ sub get_responses {
     my @responses;
 
     for my $v ( values %$question ) {
-        my @answers = variations_with_repetition( $v, 2 );
+        my $iter = variations_with_repetition( $v, 2 );
 
-        for my $answer ( @answers ) {
+        while ( my $answer = $iter->next ) {
             for my $import ( sort { $importance->{$a} <=> $importance->{$b} } keys %$importance ) {
                 push @responses, [ @$answer, $import ];
             }
