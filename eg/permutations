@@ -28,15 +28,31 @@ for my $r1 ( @responses1 ) {
 }
 
 my @variations = variations_with_repetition( \@response_pairs, 2 );
+#warn(__PACKAGE__,' ',__LINE__," MARK: ",scalar(@variations),"\n");exit;
+
+my %scores;
+
+my $n = 0;
 
 for my $v ( @variations ) {
+    $n++;
+
     my $affinity = Acme::Affinity->new(
         questions  => $questions,
         importance => $importance,
         me         => $v->[0],
         you        => $v->[1],
     );
-    print $affinity->score, "\n";
+
+    print $n, '. ', $affinity->score, "\n";
+
+    $scores{ $affinity->score }++;
+}
+
+$n = 0;
+
+for my $score ( sort { $a <=> $b } keys %scores ) {
+    print ++$n, '. ', $score, ' => ', $scores{$score}, "\n";
 }
 
 sub get_responses {
