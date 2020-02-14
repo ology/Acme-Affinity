@@ -17,8 +17,8 @@ my $importance = {
     'mandatory'          => 250,
 };
 
-my @responses1 = get_responses( $questions->[0], $importance );
-my @responses2 = get_responses( $questions->[1], $importance );
+my @responses1 = get_responses( $questions->[0], $importance ); # 45 responses
+my @responses2 = get_responses( $questions->[1], $importance ); # "
 
 my @response_pairs;
 for my $r1 ( @responses1 ) {
@@ -27,8 +27,7 @@ for my $r1 ( @responses1 ) {
     }
 }
 
-my $iter = variations_with_repetition( \@response_pairs, 2 );
-#warn(__PACKAGE__,' ',__LINE__," MARK: ",scalar(@variations),"\n");exit;
+my $iter = variations_with_repetition( \@response_pairs, 2 ); # 4.1M variations
 
 my %scores;
 
