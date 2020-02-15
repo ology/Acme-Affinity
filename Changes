@@ -1,6 +1,9 @@
 Revision history for Acme-Affinity
 
 {{$NEXT}}
+    - Remove accidental eg file.
+
+0.0105 2020-02-14 15:49:34
     - Enhanced the eg/permutations code.
 
 0.0104 2019-05-26 12:38:01
