@@ -52,12 +52,11 @@ A hash reference with importance level keys and weight values.
 
 Default:
 
-  { 'irrelevant'         => 0,
-    'a little important' => 1,
-    'somewhat important' => 10,
-    'very important'     => 50,
-    'mandatory'          => 250,
-  }
+  irrelevant         => 0
+  a little important => 1
+  somewhat important => 10
+  very important     => 50
+  mandatory          => 250
 
 =cut
 
