@@ -2,7 +2,7 @@ package Acme::Affinity;
 
 # ABSTRACT: Compute the affinity between two people
 
-our $VERSION = '0.0107';
+our $VERSION = '0.0108';
 
 use Moo;
 use strictures 2;
@@ -76,7 +76,7 @@ has importance => (
 =head2 me
 
 An array reference triple of question responses, desired responses and
-importance levels for person A.
+importance levels of person A for each of the given B<questions>.
 
 Example:
 
@@ -95,7 +95,7 @@ has me => (
 =head2 you
 
 An array reference triple of question responses, desired responses and
-importance levels for person B.
+importance levels of person B for each of the given B<questions>.
 
 Example:
 
@@ -169,6 +169,8 @@ sub _score {
 __END__
 
 =head1 SEE ALSO
+
+The F<eg/*> and F<t/01-methods.t> programs in this distribution.
 
 L<Moo>
 
