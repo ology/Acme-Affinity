@@ -2,7 +2,7 @@ package Acme::Affinity;
 
 # ABSTRACT: Compute the affinity between two people
 
-our $VERSION = '0.0106';
+our $VERSION = '0.0107';
 
 use Moo;
 use strictures 2;
@@ -23,7 +23,7 @@ use Math::BigRat;
 =head1 DESCRIPTION
 
 An C<Acme::Affinity> object computes the relationship affinity between two
-people based on a common list of questions and answers and their weighted
+people based on a common list of questions, answers and their weighted
 importance.
 
 =head1 ATTRIBUTES
@@ -81,10 +81,9 @@ importance levels for person A.
 
 Example:
 
-  [ # Me                You               Importance
-    [ 'very organized', 'very organized', 'very important' ],
-    [ 'no',             'no',             'a little important' ],
-  ]
+  #   Person A           Person B           Importance
+  [ [ 'very organized',  'very organized',  'very important' ],
+    [ 'no',              'no',              'a little important' ], ]
 
 =cut
 
@@ -101,9 +100,9 @@ importance levels for person B.
 
 Example:
 
-  [ [ 'very organized', 'average', 'a little important' ],
-    [ 'yes',            'no',      'somewhat important' ],
-  ]
+  #   Person B           Person A    Importance
+  [ [ 'very organized',  'average',  'a little important' ],
+    [ 'yes',             'no',       'somewhat important' ], ]
 
 =cut
 

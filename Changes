@@ -1,6 +1,7 @@
 Revision history for Acme-Affinity
 
 {{$NEXT}}
+    - Improve documentation.
 
 0.0106 2020-02-14 16:04:06
     - Remove accidental eg file.
