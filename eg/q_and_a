@@ -102,11 +102,15 @@ my $affinity = Acme::Affinity->new;
 
 my @importance = sort { $affinity->importance->{$a} <=> $affinity->importance->{$b} } keys %{ $affinity->importance };
 
+my $i = 0;
+
 for my $question (shuffle @$questions) {
+    $i++;
+
     my @answer = ();
 
     my $tc = Term::Choose->new({
-        prompt       => $question->{q},
+        prompt       => "$i. $question->{q}",
         clear_screen => 1,
     });
     my $choice = $tc->choose($question->{a});
