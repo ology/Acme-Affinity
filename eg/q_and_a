@@ -96,7 +96,7 @@ my $you = [
     ['say I love you', 'say I love you', 'mandatory'],
 ];
 
-my %answers = ();
+my %answers = (); # Bucket for the indexed answers
 
 my $affinity = Acme::Affinity->new;
 
@@ -129,6 +129,9 @@ for my $question (shuffle @$questions) {
     $answers{ $question->{i} } = \@answer;
 }
 
+Term::Clear::clear();
+
+# Sorted me answers
 my $me = [ map { $answers{$_} } sort { $a <=> $b } keys %answers ];
 
 $affinity = Acme::Affinity->new(
@@ -136,7 +139,5 @@ $affinity = Acme::Affinity->new(
     me        => $me,
     you       => $you,
 );
-
-Term::Clear::clear();
 
 print 'Score: ', $affinity->score, "\n";
