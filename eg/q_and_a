@@ -112,7 +112,7 @@ for my $question (shuffle @$questions) {
 
     print "\n\n\n";
 
-    $tc = Term::Choose->new({ prompt => 'You want: ' });
+    $tc = Term::Choose->new({ prompt => 'You want:' });
     $choice = $tc->choose($question->{a});
     push @answer, $choice;
 
