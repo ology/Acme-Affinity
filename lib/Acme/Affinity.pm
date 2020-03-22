@@ -35,8 +35,7 @@ A list of hash references with question keys and answer array references.
 Example:
 
   [ { 'how messy are you' => [ 'very messy', 'average', 'very organized' ] },
-    { 'do you like to be the center of attention' => [ 'yes', 'no' ] },
-  ]
+    { 'do you like to be the center of attention' => [ 'yes', 'no' ] }, ]
 
 =cut
 
