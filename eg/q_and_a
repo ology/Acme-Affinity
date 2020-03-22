@@ -100,6 +100,8 @@ my %answers = (); # Bucket for the indexed answers
 
 my $affinity = Acme::Affinity->new;
 
+my @importance = sort { $affinity->importance->{$a} <=> $affinity->importance->{$b} } keys %{ $affinity->importance };
+
 for my $question (shuffle @$questions) {
     my @answer = ();
 
@@ -119,9 +121,7 @@ for my $question (shuffle @$questions) {
     print "\n\n\n";
 
     $tc = Term::Choose->new({ prompt => 'How important is this to you?' });
-    $choice = $tc->choose([
-        sort { $affinity->importance->{$a} <=> $affinity->importance->{$b} } keys %{ $affinity->importance }
-    ]);
+    $choice = $tc->choose(\@importance);
     push @answer, $choice;
 
     $answers{ $question->{i} } = \@answer;
