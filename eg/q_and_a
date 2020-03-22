@@ -112,19 +112,13 @@ for my $question (shuffle @$questions) {
 
     print "\n\n\n";
 
-    $tc = Term::Choose->new({
-        prompt       => 'You want: ',
-#        clear_screen => 1,
-    });
+    $tc = Term::Choose->new({ prompt => 'You want: ' });
     $choice = $tc->choose($question->{a});
     push @answer, $choice;
 
     print "\n\n\n";
 
-    $tc = Term::Choose->new({
-        prompt       => 'How important is this to you?',
-#        clear_screen => 1,
-    });
+    $tc = Term::Choose->new({ prompt => 'How important is this to you?' });
     $choice = $tc->choose([
         sort { $affinity->importance->{$a} <=> $affinity->importance->{$b} } keys %{ $affinity->importance }
     ]);
