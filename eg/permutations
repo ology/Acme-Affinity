@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-# WARNING: This code could take most of forever...
+# WARNING: Running this could take most of forever...
 
 use Acme::Affinity;
 use Algorithm::Combinatorics qw/ variations_with_repetition /;
