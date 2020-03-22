@@ -43,7 +43,7 @@ while ( my $v = $iter->next ) {
         you        => $v->[1],
     );
 
-    print $n, '. ', $affinity->score, "\n";
+#    print $n, '. ', $affinity->score, "\n";
 
     $scores{ $affinity->score }++;
 }
