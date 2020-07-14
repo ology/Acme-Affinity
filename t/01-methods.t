@@ -43,7 +43,7 @@ is_deeply $affinity->me, $me, 'me';
 is_deeply $affinity->you, $you, 'you';
 
 my $score = $affinity->score();
-is sprintf( '%.2f', $score ), 94.41, 'score';
+is sprintf( '%.2f', $score ), '94.41', 'score';
 
 $me = [
     [ 'very organized', 'very organized', 'very important' ],
