@@ -96,7 +96,7 @@ my $you = [
     ['say I love you', 'say I love you', 'mandatory'],
 ];
 
-my %answers = (); # Bucket for the indexed answers
+my %answers = (); # Bucket for the indexed "me" answers
 
 my $affinity = Acme::Affinity->new;
 
