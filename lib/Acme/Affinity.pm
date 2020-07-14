@@ -93,11 +93,12 @@ Example:
   [ [ 'very organized',  'very organized',  'very important' ],
     [ 'no',              'no',              'a little important' ], ]
 
-So person A ("me") considers themself to be very organized, desires a
-very organized person, and this is a very important to them.
+So person A ("me") considers him or herself to be "very organized",
+desires a "very organized" person, and this is "very important" to
+them.
 
-Person A also does not need to be the center of attention, desires the
-same type of person, but this is only a little important.
+Person A also does not need to be the "center of attention", desires
+the same type of person, but this is only "a little important."
 
 =cut
 
@@ -120,11 +121,12 @@ Example:
   [ [ 'very organized',  'average',  'a little important' ],
     [ 'yes',             'no',       'somewhat important' ], ]
 
-Person B considers themself to be very organized, but only desires
-someone who is average, and this is only a little important to them.
+Person B considers him or herself to be "very organized", but only
+desires someone who is "average", and this is only "a little
+important" to them.
 
-Person B likes to be the center of attention, desires someone who does
-not, and this is somewhat important.
+Person B likes to be the "center of attention", desires someone who
+does not, and this is "somewhat important."
 
 =cut
 
