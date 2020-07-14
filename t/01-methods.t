@@ -42,7 +42,7 @@ is_deeply $affinity->importance, $importance, 'importance';
 is_deeply $affinity->me, $me, 'me';
 is_deeply $affinity->you, $you, 'you';
 
-my $score = $affinity->score();
+my $score = $affinity->score;
 is sprintf( '%.2f', $score ), '94.41', 'score';
 
 $me = [
@@ -61,7 +61,7 @@ $affinity = Acme::Affinity->new(
     you        => $you,
 );
 
-$score = $affinity->score();
+$score = $affinity->score;
 is $score, 100, 'score';
 
 $me = [
@@ -80,7 +80,7 @@ $affinity = Acme::Affinity->new(
     you        => $you,
 );
 
-$score = $affinity->score();
+$score = $affinity->score;
 is $score, 0, 'score';
 
 done_testing();
