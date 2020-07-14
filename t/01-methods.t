@@ -6,9 +6,7 @@ use Test::More;
 
 use_ok 'Acme::Affinity';
 
-my $affinity = eval { Acme::Affinity->new };
-isa_ok $affinity, 'Acme::Affinity';
-ok !$@, 'created with no arguments';
+my $affinity = new_ok 'Acme::Affinity';
 
 my $questions = [
     { 'how messy are you' => [ 'very messy', 'average', 'very organized' ] },
@@ -30,12 +28,12 @@ my $you = [
     [ 'yes',            'no',      'somewhat important' ],
 ];
 
-$affinity = Acme::Affinity->new(
+$affinity = new_ok 'Acme::Affinity' => [
     questions  => $questions,
     importance => $importance,
     me         => $me,
     you        => $you,
-);
+];
 
 is_deeply $affinity->questions, $questions, 'questions';
 is_deeply $affinity->importance, $importance, 'importance';
@@ -54,12 +52,12 @@ $you = [
     [ 'no',             'no',             'very important' ],
 ];
 
-$affinity = Acme::Affinity->new(
+$affinity = new_ok 'Acme::Affinity' => [
     questions  => $questions,
     importance => $importance,
     me         => $me,
     you        => $you,
-);
+];
 
 $score = $affinity->score;
 is $score, 100, 'score';
@@ -73,12 +71,12 @@ $you = [
     [ 'yes',        'yes',        'very important' ],
 ];
 
-$affinity = Acme::Affinity->new(
+$affinity = new_ok 'Acme::Affinity' => [
     questions  => $questions,
     importance => $importance,
     me         => $me,
     you        => $you,
-);
+];
 
 $score = $affinity->score;
 is $score, 0, 'score';
