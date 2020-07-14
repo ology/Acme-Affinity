@@ -1,6 +1,9 @@
 Revision history for Acme-Affinity
 
 {{$NEXT}}
+    - Fix documentation grammar.
+
+0.0110 2020-07-14 14:16:28
     - Improve documentation.
     - Make all the attributes required.
     - Clean up test a bit.
