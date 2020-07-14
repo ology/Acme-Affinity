@@ -4,7 +4,7 @@ Revision history for Acme-Affinity
     - Improve documentation.
     - Make all the attributes required.
     - Clean up test a bit.
-    - Use an algorithm instead of hardcoded you answers in the eg/q_and_a program.
+    - Use an algorithm instead of hardcoded "you" answers in the eg/q_and_a program.
 
 0.0109 2020-03-22 00:08:27
     - Improved the eg/q_and_a program.
