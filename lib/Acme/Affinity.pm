@@ -44,9 +44,10 @@ Example:
 =cut
 
 has questions => (
-    is      => 'ro',
-    isa     => sub { die 'Not an ArrayRef' unless ref($_[0]) eq 'ARRAY' },
-    default => sub { [] },
+    is       => 'ro',
+    isa      => sub { die 'Not an ArrayRef' unless ref($_[0]) eq 'ARRAY' },
+    default  => sub { [] },
+    required => 1,
 );
 
 =head2 importance
@@ -77,6 +78,7 @@ has importance => (
             'mandatory'          => 250,
         }
     },
+    required => 1,
 );
 
 =head2 me
@@ -100,9 +102,10 @@ same type of person, but this is only a little important.
 =cut
 
 has me => (
-    is      => 'ro',
-    isa     => sub { die 'Not an ArrayRef' unless ref($_[0]) eq 'ARRAY' },
-    default => sub { [] },
+    is       => 'ro',
+    isa      => sub { die 'Not an ArrayRef' unless ref($_[0]) eq 'ARRAY' },
+    default  => sub { [] },
+    required => 1,
 );
 
 =head2 you
@@ -126,9 +129,10 @@ not, and this is somewhat important.
 =cut
 
 has you => (
-    is      => 'ro',
-    isa     => sub { die 'Not an ArrayRef' unless ref($_[0]) eq 'ARRAY' },
-    default => sub { [] },
+    is       => 'ro',
+    isa      => sub { die 'Not an ArrayRef' unless ref($_[0]) eq 'ARRAY' },
+    default  => sub { [] },
+    required => 1,
 );
 
 =head1 METHODS
