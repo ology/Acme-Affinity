@@ -1,6 +1,7 @@
 Revision history for Acme-Affinity
 
 {{$NEXT}}
+    - Specify Math::BigInt minimum version.
 
 0.0111 2020-07-14 16:40:37
     - Fix documentation grammar.
