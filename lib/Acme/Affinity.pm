@@ -4,11 +4,10 @@ package Acme::Affinity;
 
 our $VERSION = '0.0113';
 
+use Math::BigRat ();
 use Moo;
 use strictures 2;
 use namespace::clean;
-
-use Math::BigRat;
 
 =head1 SYNOPSIS
 
