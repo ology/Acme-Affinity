@@ -2,7 +2,7 @@ package Acme::Affinity;
 
 # ABSTRACT: Compute the affinity between two people
 
-our $VERSION = '0.0113';
+our $VERSION = '0.0114';
 
 use Math::BigRat ();
 use Moo;
